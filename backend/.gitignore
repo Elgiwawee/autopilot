@@ -1,0 +1,39 @@
+# Python
+ai_venv/
+backend/ai_venv/
+venv/
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+
+# Django
+db.sqlite3
+media/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# React / Next
+.next/
+dist/
+build/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Cache
+.cache/
