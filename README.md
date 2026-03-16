@@ -6,6 +6,7 @@ The system collects infrastructure metrics, processes them using AI-assisted ana
 
 The platform is built as a distributed microservice architecture with an asynchronous analysis engine powered by Celery workers and Redis queues.
 
+
 Problem
 
 Cloud infrastructure costs can increase rapidly due to:
@@ -19,6 +20,7 @@ Inefficient storage configurations
 Poor autoscaling strategies
 
 Many teams lack real-time visibility into resource utilization across multiple cloud providers.
+
 
 AI Cloud Cost Autopilot addresses this problem by providing:
 
@@ -40,6 +42,7 @@ Google Cloud Platform
 Microsoft Azure
 
 AI-Powered Optimization
+
 
 Detects:
 
@@ -97,6 +100,8 @@ billing analytics
 
 audit logging
 
+
+
 Tech Stack
 Backend
 
@@ -142,7 +147,10 @@ Docker Compose
 
 System Architecture
 
+
+
 The system is divided into three primary layers.
+
 
 1. Data Collection Layer
 
@@ -166,6 +174,7 @@ network traffic
 
 instance performance
 
+
 2. Analysis Engine
 
 The analysis engine processes collected data using asynchronous workers.
@@ -188,6 +197,8 @@ evaluate cost impact
 
 generate optimization insights
 
+
+
 3. Recommendation Engine
 
 This layer transforms analysis results into actionable insights.
@@ -202,7 +213,11 @@ terminate idle services
 
 adjust autoscaling rules
 
+
+
 Project Structure
+
+
 autopilot-ai
 │
 ├── backend
@@ -230,33 +245,42 @@ autopilot-ai
 │   └── vite configuration
 │
 └── README.md
+
+
 Backend Architecture
 
 The Django backend is modularized into specialized services.
+
 
 Accounts
 
 User authentication and access management.
 
+
 Cloud
 
 Handles integrations with cloud providers and collects infrastructure metrics.
+
 
 AI Engine
 
 Processes infrastructure data and performs optimization analysis.
 
+
 Billing
 
 Tracks cost analytics and infrastructure spending.
+
 
 Monitoring
 
 Tracks system health and background job performance.
 
+
 Audit
 
 Maintains logs for infrastructure changes and optimization actions.
+
 
 Control Plane
 
@@ -307,9 +331,11 @@ System Architecture Diagram
 
 
 Installation
+
 Clone Repository
 git clone https://github.com/Elgiwawee/autopilot-ai.git
 cd autopilot-ai
+
 Backend Setup
 cd backend
 
@@ -322,6 +348,8 @@ python manage.py runserver
 Backend will run on:
 
 http://127.0.0.1:8000
+
+
 Frontend Setup
 cd autopilot-dashboard
 
@@ -352,9 +380,13 @@ anomaly detection for unusual spending
 
 machine learning based optimization models
 
+
+
 License
 
 MIT License
+
+
 
 Author
 
