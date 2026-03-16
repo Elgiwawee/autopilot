@@ -341,49 +341,56 @@ Coordinates communication between services.
 
 # Installation
 
-```
+
 Clone Repository
-
+```
 git clone https://github.com/Elgiwawee/autopilot-ai.git
-
+```
+```
 cd autopilot-ai
-
+```
 
 Backend Setup
-
+```
 cd backend
-
+```
+```
 pip install -r requirements.txt
-
+```
+```
 python manage.py migrate
-
+```
 python manage.py runserver
-
-
+```
+```
 Backend will run on:
-
+```
+```
 http://127.0.0.1:8000
-
-
+```
+```
 Frontend Setup
-
+```
 cd autopilot-dashboard
-
+```
+```
 npm install
-
+```
+```
 npm run dev
 
-
+```
 Dashboard will run on:
-
+```
 http://localhost:5173
-
+```
 
 Running Background Workers
 
 Celery workers handle infrastructure analysis tasks.
-
+```
 celery -A config worker -l info
+```
 ⚠️ Redis must be running before starting Celery.
 ```
 
