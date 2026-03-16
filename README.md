@@ -6,7 +6,6 @@ The system collects infrastructure metrics, processes them using AI-assisted ana
 
 The platform is built as a distributed microservice architecture with an asynchronous analysis engine powered by Celery workers and Redis queues.
 
-
 Problem
 
 Cloud infrastructure costs can increase rapidly due to:
@@ -21,14 +20,13 @@ Poor autoscaling strategies
 
 Many teams lack real-time visibility into resource utilization across multiple cloud providers.
 
-
 AI Cloud Cost Autopilot addresses this problem by providing:
 
-automated infrastructure analysis
+Automated infrastructure analysis
 
-real-time usage monitoring
+Real-time usage monitoring
 
-intelligent cost optimization recommendations
+Intelligent cost optimization recommendations
 
 Core Features
 Multi-Cloud Cost Analysis
@@ -43,28 +41,27 @@ Microsoft Azure
 
 AI-Powered Optimization
 
-
 Detects:
 
-underutilized instances
+Underutilized instances
 
-over-provisioned resources
+Over-provisioned resources
 
-inefficient storage usage
+Inefficient storage usage
 
-idle network resources
+Idle network resources
 
 Automated Cost Recommendations
 
 The system generates suggestions such as:
 
-instance resizing
+Instance resizing
 
-storage tier migration
+Storage tier migration
 
-idle resource cleanup
+Idle resource cleanup
 
-autoscaling optimization
+Autoscaling optimization
 
 Background Infrastructure Analysis
 
@@ -78,29 +75,27 @@ Real-Time Dashboard
 
 A modern React dashboard displays:
 
-cost analytics
+Cost analytics
 
-resource utilization
+Resource utilization
 
-optimization recommendations
+Optimization recommendations
 
-monitoring insights
+Monitoring insights
 
 Microservice Architecture
 
 The platform separates core services including:
 
-cloud integrations
+Cloud integrations
 
 AI analysis engine
 
-monitoring system
+Monitoring system
 
-billing analytics
+Billing analytics
 
-audit logging
-
-
+Audit logging
 
 Tech Stack
 Backend
@@ -121,7 +116,7 @@ Frontend
 
 React
 
-Vite
+Vite.js
 
 TailwindCSS
 
@@ -147,12 +142,9 @@ Docker Compose
 
 System Architecture
 
-
-
 The system is divided into three primary layers.
 
-
-1. Data Collection Layer
+1️⃣ Data Collection Layer
 
 Responsible for collecting infrastructure metrics from cloud providers.
 
@@ -166,16 +158,15 @@ Azure APIs
 
 Collected metrics include:
 
-compute usage
+Compute usage
 
-storage consumption
+Storage consumption
 
-network traffic
+Network traffic
 
-instance performance
+Instance performance
 
-
-2. Analysis Engine
+2️⃣ Analysis Engine
 
 The analysis engine processes collected data using asynchronous workers.
 
@@ -185,39 +176,33 @@ Celery workers
 
 Redis queues
 
-scheduled background tasks
+Scheduled background tasks
 
 Responsibilities:
 
-analyze usage patterns
+Analyze usage patterns
 
-detect inefficiencies
+Detect inefficiencies
 
-evaluate cost impact
+Evaluate cost impact
 
-generate optimization insights
+Generate optimization insights
 
-
-
-3. Recommendation Engine
+3️⃣ Recommendation Engine
 
 This layer transforms analysis results into actionable insights.
 
 Example recommendations:
 
-downscale unused compute resources
+Downscale unused compute resources
 
-move cold storage to cheaper tiers
+Move cold storage to cheaper tiers
 
-terminate idle services
+Terminate idle services
 
-adjust autoscaling rules
-
-
+Adjust autoscaling rules
 
 Project Structure
-
-
 autopilot-ai
 │
 ├── backend
@@ -242,100 +227,80 @@ autopilot-ai
 │   │   ├── context
 │   │   ├── pages
 │   │   └── routes
-│   └── vite configuration
 │
 └── README.md
-
-
 Backend Architecture
 
 The Django backend is modularized into specialized services.
-
 
 Accounts
 
 User authentication and access management.
 
-
 Cloud
 
 Handles integrations with cloud providers and collects infrastructure metrics.
-
 
 AI Engine
 
 Processes infrastructure data and performs optimization analysis.
 
-
 Billing
 
 Tracks cost analytics and infrastructure spending.
-
 
 Monitoring
 
 Tracks system health and background job performance.
 
-
 Audit
 
 Maintains logs for infrastructure changes and optimization actions.
-
 
 Control Plane
 
 Coordinates communication between services.
 
-
 System Architecture Diagram
-
-                           ┌──────────────────────┐
-                           │      React Dashboard │
-                           │  (Vite + Tailwind)   │
-                           └───────────┬──────────┘
-                                       │
-                                       │ REST API
-                                       │
-                         ┌─────────────▼─────────────┐
-                         │        Django API         │
-                         │  (Django REST Framework)  │
-                         └─────────────┬─────────────┘
-                                       │
-                ┌──────────────────────┼──────────────────────┐
-                │                      │                      │
-                ▼                      ▼                      ▼
-        ┌──────────────┐      ┌──────────────┐       ┌──────────────┐
-        │ Cloud Engine │      │ Monitoring   │       │ Billing      │
-        │              │      │              │       │              │
-        │ AWS          │      │ Resource     │       │ Cost         │
-        │ GCP          │      │ Metrics      │       │ Analytics    │
-        │ Azure        │      │ Tracking     │       │              │
-        └──────┬───────┘      └──────┬───────┘       └──────┬───────┘
-               │                     │                      │
-               └─────────────┬───────┴──────────────┬───────┘
-                             ▼                      ▼
-                     ┌──────────────┐       ┌──────────────┐
-                     │ Celery Queue │       │ PostgreSQL   │
-                     │              │       │ Database     │
-                     │ Redis Broker │       │              │
-                     └──────────────┘       └──────────────┘
-                             │
-                             ▼
-                    ┌─────────────────┐
-                    │ AI Analysis     │
-                    │ Engine          │
-                    │                 │
-                    │ Cost Optimization
-                    │ Recommendation
-                    └─────────────────┘
-
-
+                       ┌──────────────────────┐
+                       │      React Dashboard │
+                       │  (Vite + Tailwind)   │
+                       └───────────┬──────────┘
+                                   │
+                                   │ REST API
+                                   │
+                     ┌─────────────▼─────────────┐
+                     │        Django API         │
+                     │  (Django REST Framework)  │
+                     └─────────────┬─────────────┘
+                                   │
+            ┌──────────────────────┼──────────────────────┐
+            │                      │                      │
+            ▼                      ▼                      ▼
+    ┌──────────────┐      ┌──────────────┐       ┌──────────────┐
+    │ Cloud Engine │      │ Monitoring   │       │ Billing      │
+    │ AWS/GCP/Azure│      │ Metrics      │       │ Analytics    │
+    └──────┬───────┘      └──────┬───────┘       └──────┬───────┘
+           │                     │                      │
+           └─────────────┬───────┴──────────────┬───────┘
+                         ▼                      ▼
+                 ┌──────────────┐       ┌──────────────┐
+                 │ Celery Queue │       │ PostgreSQL   │
+                 │ Redis Broker │       │ Database     │
+                 └──────────────┘       └──────────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │ AI Analysis     │
+                │ Engine          │
+                │ Cost Optimization
+                │ Recommendations │
+                └─────────────────┘
 Installation
-
 Clone Repository
 git clone https://github.com/Elgiwawee/autopilot-ai.git
-cd autopilot-ai
 
+cd autopilot-ai
 Backend Setup
 cd backend
 
@@ -348,8 +313,6 @@ python manage.py runserver
 Backend will run on:
 
 http://127.0.0.1:8000
-
-
 Frontend Setup
 cd autopilot-dashboard
 
@@ -366,29 +329,24 @@ Celery workers handle infrastructure analysis tasks.
 
 celery -A config worker -l info
 
-Redis must be running before starting Celery.
+⚠️ Redis must be running before starting Celery.
 
 Future Improvements
 
 Planned improvements include:
 
-predictive cost forecasting
+Predictive cost forecasting
 
-automated infrastructure scaling
+Automated infrastructure scaling
 
-anomaly detection for unusual spending
+Anomaly detection for unusual spending
 
-machine learning based optimization models
-
-
+Machine learning-based optimization models
 
 License
 
 MIT License
 
-
-
 Author
 
-Developed by
 Zaharaddeen Umar
